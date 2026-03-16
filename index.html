@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Записка на вечер</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+        
+        body {
+            background-color: #2c2c2c;
+            color: #333;
+            font-family: 'Neucha', cursive;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .paper {
+            max-width: 520px;
+            margin: 40px auto;
+            padding: 50px 45px;
+            background: radial-gradient(circle, transparent 1px, rgba(0,0,0,0.02) 1px), linear-gradient(to bottom, #ffffe0, #fffacd);
+            background-size: 20px 20px, 100% 100%;
+            box-shadow: 1px 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            border-radius: 3px;
+        }
+
+        /* Маркер: чуть менее яркий и неровный */
+        .marker {
+            background: rgba(255, 241, 118, 0.4);
+            padding: 0 3px;
+            border-radius: 2px;
+        }
+
+        /* Общие стили для SVG-карандаша */
+        .sketch {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.4;
+            fill: none;
+            stroke: #555;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .sketch-sun { top: 30px; right: 40px; width: 60px; height: 60px; }
+        .sketch-cloud { bottom: 50px; left: 30px; width: 80px; height: 40px; }
+        .sketch-arrow { top: 150px; left: 10px; width: 30px; height: 50px; transform: rotate(-10deg); }
+        .sketch-star { width: 15px; height: 15px; }
+
+        /* Кривая линия как от руки */
+        .hand-line {
+            width: 100%;
+            height: 15px;
+            margin: 25px 0;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="paper">
+        <!-- Солнце -->
+        <svg class="sketch sketch-sun" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="15" stroke-dasharray="3 2" />
+            <path d="M50 10 Q52 17 50 25 M50 75 Q48 82 50 90 M10 50 Q17 52 25 50 M75 50 Q82 48 90 50 M25 25 L35 35 M65 65 L75 75 M25 75 L35 65 M65 25 L75 35" />
+        </svg>
+
+        <!-- Стрелочка сбоку -->
+        <svg class="sketch sketch-arrow" viewBox="0 0 40 100">
+            <path d="M10 10 Q 30 50 10 90 M10 90 L5 80 M10 90 L20 82" />
+        </svg>
+
+        <p class="mb-8 text-gray-400 text-lg">Вечер уже... :)</p>
+
+        <p class="mb-6">
+            Привет! Слушай, день сегодня был какой-то бесконечный, но я под вечер вспомнил одну штуку. 
+        </p>
+
+        <p class="mb-6">
+            Оказывается, сегодня официально был день цветных карандашей. Я сразу вспомнил, как мы гуляли в прошлую субботу. Мне на самом деле очень приятно находиться с тобой рядом.
+        </p>
+
+        <p class="mb-6">
+            Знаешь, у меня <span class="marker">почти нет друзей</span>, и я очень ценю, что ты классная и общаешься со мной просто так. Это правда редкость сейчас. С тобой как-то всё сразу становится проще, даже когда мы просто переписываемся. :D
+        </p>
+
+        <!-- Кривая линия -->
+        <svg class="hand-line" viewBox="0 0 400 20" preserveAspectRatio="none">
+            <path d="M0 10 Q 50 5, 100 12 T 200 8 T 300 13 T 400 10" fill="none" stroke="#666" stroke-width="2" />
+        </svg>
+
+        <p class="mb-6">
+            А еще сегодня был день спонтанности. Вечер уже, он почти прошел, но мне нравится, что у нас всё получается <span class="marker">без всяких планов</span>. В этом есть какой-то свой кайф.
+        </p>
+
+        <p class="mb-10">
+            В общем, просто захотелось тебе это написать. Чтобы ты улыбнулась. Ты очень классная. :3
+        </p>
+
+        <p class="mb-10">
+            сорянчик если это хуйня, просто типа да.
+        </p>
+
+        <p class="text-3xl font-bold mb-4">Спокойной ночи! :D</p>
+
+        <!-- Звездочки внизу -->
+        <div class="flex gap-4 mt-4 opacity-40">
+            <svg class="sketch-star" viewBox="0 0 20 20">
+                <path d="M10 0 L13 7 L20 7 L15 12 L17 20 L10 15 L3 20 L5 12 L0 7 L7 7 Z" fill="none" stroke="#444" stroke-width="1.5" />
+            </svg>
+            <svg class="sketch-star" viewBox="0 0 20 20">
+                <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="none" stroke="#444" stroke-width="1.5" />
+            </svg>
+        </div>
+
+        <!-- Облако -->
+        <svg class="sketch sketch-cloud" viewBox="0 0 100 50">
+            <path d="M20 35 Q 20 20, 40 25 Q 50 10, 70 20 Q 90 20, 85 40 Q 50 45, 20 35" stroke-dasharray="4 2" />
+        </svg>
+
+        <!-- Мелкая штриховка в углу -->
+        <svg style="position:absolute; bottom:10px; right:10px; width:40px; height:40px; opacity:0.2;">
+            <path d="M0 40 L40 0 M10 40 L40 10 M20 40 L40 20 M30 40 L40 30" stroke="#000" stroke-width="1" />
+        </svg>
+    </div>
+
+</body>
+</html>
